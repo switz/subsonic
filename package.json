@@ -1,0 +1,17 @@
+{
+  "name": "subsonic",
+  "version": "0.0.1",
+  "description": "Interface with the subsonic api",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/switz/subsonic.git"
+  },
+  "author": "Daniel Saewitz",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "coffee-script": "~1.6.1",
+    "superagent": "~0.13.0"
+  }
+}
