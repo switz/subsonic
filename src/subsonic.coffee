@@ -49,5 +49,12 @@ class Subsonic
     @get 'getSong', { id }, (res) ->
       cb null, res.song
 
+  createShare: (id, expires, cb) ->
+    if typeof expires is 'function'
+      cb = expires.bind {}
+      # valid for 1 hour
+      expires = (Date.now() / 1000) + 3600
+    @get 'createShare', { id, expires }, (res) ->
+      cb null, res.shares.share
 
 module.exports = Subsonic

@@ -73,3 +73,13 @@ describe 'API', ->
         expect(song.title).to.be 'Down With Disease >'
         done()
 
+    it 'createShare', (done) ->
+      oneHour = (Date.now()/1000) + 3600000
+      subsonic.createShare 35690, oneHour, (err, share) ->
+        expect(err).to.be null
+        #expect(share.expires).to.be new Date((oneHour - 3596400) * 1000).toISOString()
+        expect(share.entry.id).to.be 35690
+        expect(share.entry.genre).to.be 'Jamband'
+        expect(share.entry.album).to.be '12-29-1997 MSG, NY'
+        expect(share.entry.title).to.be 'Down With Disease >'
+        done()
