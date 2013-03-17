@@ -8,16 +8,18 @@ class Subsonic
     @version ||= '1.7'
 
   get: (path, query, cb) ->
+    cb = arguments[arguments.length - 1]
+
     request.get("#{@server}/#{path}.view")
       .query('u': @username, 'p': @password)
       .query('c': @application, 'v': @version, 'f': @format)
-      .query(query)
+      .query(query unless typeof query is 'function')
       .end (res) ->
         cb res.body['subsonic-response']
 
   ping: (cb) ->
     @get 'ping', (response) ->
-      cb null, !response
+      cb null, response
 
   getFolder: (id, cb) ->
     @get 'getMusicDirectory', { id }, (response) ->
