@@ -7,16 +7,20 @@ class Subsonic
     @format ||= 'json'
     @version ||= '1.7'
 
-  request: (path, query, cb) ->
+  get: (path, query, cb) ->
     request.get("#{@server}/#{path}.view")
       .query('u': @username, 'p': @password)
       .query('c': @application, 'v': @version, 'f': @format)
       .query(query)
       .end (res) ->
-        cb res.body['subsonic-response'].directory.child
+        cb res.body['subsonic-response']
+
+  ping: (cb) ->
+    @get 'ping', (response) ->
+      cb null, !response
 
   getFolder: (id, cb) ->
-    @request 'getMusicDirectory', { id }, (folder) ->
-      cb null, folder
+    @get 'getMusicDirectory', { id }, (response) ->
+      cb null, response.directory.child
 
 module.exports = Subsonic
