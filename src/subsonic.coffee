@@ -21,8 +21,33 @@ class Subsonic
     @get 'ping', (response) ->
       cb null, response
 
-  getFolder: (id, cb) ->
+  topLevelFolders: (cb) ->
+    @get 'getMusicFolders', (res) ->
+      cb null, res.musicFolders.musicFolder
+
+  indexes: (cb) ->
+    @get 'getIndexes', (res) ->
+      cb null, res.indexes.index
+
+  folder: (id, cb) ->
     @get 'getMusicDirectory', { id }, (response) ->
       cb null, response.directory.child
+
+  artists: (cb) ->
+    @get 'getArtists', (res) ->
+      cb null, res.artists.index
+
+  artist: (id, cb) ->
+    @get 'getArtist', { id }, (res) ->
+      cb null, res.artist
+
+  album: (id, cb) ->
+    @get 'getAlbum', { id }, (res) ->
+      cb null, res.album
+
+  song: (id, cb) ->
+    @get 'getSong', { id }, (res) ->
+      cb null, res.song
+
 
 module.exports = Subsonic
