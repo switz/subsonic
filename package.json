@@ -1,6 +1,6 @@
 {
   "name": "subsonic",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Interface with the subsonic api",
   "main": "index.js",
   "repository": {
