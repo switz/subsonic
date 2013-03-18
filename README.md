@@ -3,6 +3,17 @@ subsonic
 
 npm module for the subsonic api
 
+### Install
+
+```
+$ npm install subsonic --save
+```
+
+### Docs
+[Documentation](http://saewitz.com/subsonic/doc/classes/Subsonic.html)
+
+### Example
+
 ```javascript
 Subsonic = require('subsonic');
 subsonic = new Subsonic({
