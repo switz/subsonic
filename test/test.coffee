@@ -1,7 +1,6 @@
 request = require 'superagent'
 expect = require 'expect.js'
 nconf = require 'nconf'
-config = require './config'
 require 'coffee-script'
 
 ## monkey-patch expect.js for better diffs on mocha
