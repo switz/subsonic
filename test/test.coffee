@@ -1,5 +1,7 @@
 request = require 'superagent'
 expect = require 'expect.js'
+nconf = require 'nconf'
+config = require './config'
 require 'coffee-script'
 
 ## monkey-patch expect.js for better diffs on mocha
@@ -10,10 +12,18 @@ expect.Assertion::be = expect.Assertion::equal = (obj) ->
   @_expected = obj
   origBe.call this, obj
 
+#nconf.env()
+nconf.file('config.json')
+
+console.log nconf.get()
+
 ### Subsonic ###
-config = require './config'
 Subsonic = require '../src/subsonic'
-subsonic = new Subsonic config
+subsonic = new Subsonic
+  username: nconf.get 'USERNAME'
+  password: nconf.get 'PASSWORD'
+  server: nconf.get 'SERVER'
+  application: 'test'
 
 ### Specs ###
 
