@@ -16,7 +16,8 @@
   },
   "devDependencies": {
     "expect.js": "~0.2.0",
-    "mocha": "~1.8.2"
+    "mocha": "~1.8.2",
+    "codo": "~1.5.6"
   },
   "scripts": {
     "test": "mocha"
