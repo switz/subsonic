@@ -15,6 +15,8 @@ nconf.argv()
   .env()
   .file(__dirname + '/config.json')
 
+console.log nconf.get 'USERNAME'
+
 ### Subsonic ###
 Subsonic = require '../src/subsonic'
 subsonic = new Subsonic
