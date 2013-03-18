@@ -1,5 +1,6 @@
 request = require 'superagent'
 expect = require 'expect.js'
+nconf = require 'nconf'
 require 'coffee-script'
 
 ## monkey-patch expect.js for better diffs on mocha
@@ -10,10 +11,17 @@ expect.Assertion::be = expect.Assertion::equal = (obj) ->
   @_expected = obj
   origBe.call this, obj
 
+nconf.argv()
+  .env()
+  .file(__dirname + '/config.json')
+
 ### Subsonic ###
-config = require './config'
 Subsonic = require '../src/subsonic'
-subsonic = new Subsonic config
+subsonic = new Subsonic
+  username: nconf.get 'USERNAME'
+  password: nconf.get 'PASSWORD'
+  server: nconf.get 'SERVER'
+  application: 'test'
 
 ### Specs ###
 
@@ -73,3 +81,9 @@ describe 'API', ->
         expect(song.title).to.be 'Down With Disease >'
         done()
 
+    it 'chain', (done) ->
+      subsonic.ping((err, res) ->
+        expect(res.status).to.be 'ok'
+      ).topLevelFolders (err, folders) ->
+        expect(folders.length).to.be 2
+        done()

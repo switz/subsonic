@@ -3,6 +3,8 @@ subsonic
 
 npm module for the subsonic api
 
+[![build status](https://secure.travis-ci.org/switz/subsonic.png)](http://travis-ci.org/switz/subsonic)
+
 ### Install
 
 ```
