@@ -115,12 +115,28 @@
         </p>
       </nav>
       <div id='filecontents'>
-        <h1>subsonic</h1><p>npm module for the subsonic api</p>
+        <h1>subsonic</h1><p>npm module for the subsonic api</p><h3>Install</h3>
+<pre><code>$ npm install subsonic --save</code></pre>
+<h3>Docs</h3><p><a href="http://saewitz.com/subsonic/doc/classes/Subsonic.html">Documentation</a></p><h3>Example</h3>
+<pre><code class="lang-javascript">Subsonic = require(&#39;subsonic&#39;);
+subsonic = new Subsonic({
+  username: &#39;&#39;,
+  password: &#39;&#39;,
+  server: &#39;&#39;,
+  application: &#39;subsonic node.js api&#39;, // optional
+  format: &#39;json&#39;, // optional
+  version: 1.7 // optional
+});
+
+subsonic.ping(function(err, res) {
+  console.log(res.status);
+});</code></pre>
+
       </div>
     </div>
     <div id='footer'>
   Generated on
-  Sun Mar 17 2013 22:12:46 GMT-0400 (EDT)
+  Sun Mar 17 2013 22:24:56 GMT-0400 (EDT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
   v1.5.6
