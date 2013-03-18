@@ -12,10 +12,9 @@ expect.Assertion::be = expect.Assertion::equal = (obj) ->
   @_expected = obj
   origBe.call this, obj
 
-#nconf.env()
-nconf.file('config.json')
-
-console.log nconf.get()
+nconf.argv()
+  .env()
+  .file(__dirname + '/config.json')
 
 ### Subsonic ###
 Subsonic = require '../src/subsonic'
