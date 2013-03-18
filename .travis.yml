@@ -6,8 +6,6 @@ node_js:
 - “0.10”
 env:
   global:
-  - secure: ! 'GZFMU6FhzZnGsuKz5wKjCOjJRjloozbMfKuMAmL3ai9aPRaDW4bO7MBCO4E6
-
-      IC9Da/f7SZVVUbBA80izHpVpXSARonYec0i2IEHhC79lokly4EEMRr7W3bxP
-
-      4ookfqZjXqIOG6+/YDbHtpXL5iAAP7HC1BHxE1hAogUhjVQg6MQ='
+  - secure: "NANU+XU7eHLSiwH8nFi/+ymULVD8e4YFriHljNK7VtT3dHG0+k8dXAGl6CCv\noLjCpQWIAGj1INjN1IqwKKRuwwMrOAAqn7zG0UdvV7D4IJbU/Ew6PcLD+dNa\nqnwRJnDrlDsWl+VPN9mDbg5ZbLNic5mMv+nXDK/3EMeY4gSyAKI="
+  - secure: "bLnQwg4hcZHytNH1XT7IxIRQjai8E2RwAYXiQGqxZpyHWeJ6wblB+Ef66qU3\n/BElAVgXGT/8KYSDWllrE+5tNssKPwBb28/71vLu9Fj+O+eqGG2sbMT+o0l7\nrxPYYuJGsehg6fWqQ+xi314TjluChxm2LxJKTDBFhJ2+O8jNRpg="
+  - secure: "heE2W5fxjakSuS1SXznyOsdSPUZHxZ0L+nz/92SVo4YfbXV3oTWoXsw0gxJp\niXwIzM2n7lsCVGl+VLDqlOe8x16Ke5P6jLpw2LWxLmdimXa1bBoS+hkwNqZx\n3HYhtEN3i9IV71RSNIrBfU/xJ77IoTigxLdO6cuId2anwt2B91A="
