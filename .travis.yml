@@ -3,7 +3,6 @@ language: node_js
 node_js:
 - 0.6
 - 0.8
-- “0.10”
 env:
   global:
   - secure: "NANU+XU7eHLSiwH8nFi/+ymULVD8e4YFriHljNK7VtT3dHG0+k8dXAGl6CCv\noLjCpQWIAGj1INjN1IqwKKRuwwMrOAAqn7zG0UdvV7D4IJbU/Ew6PcLD+dNa\nqnwRJnDrlDsWl+VPN9mDbg5ZbLNic5mMv+nXDK/3EMeY4gSyAKI="
