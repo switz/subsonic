@@ -102,6 +102,7 @@ class Subsonic
   # http://your-server/rest/createShare.view
   #
   # @param  {number} id
+  # @param  {number} expires date share should expire in epoch time (ms since 1970) (optional)
   # @param  {Function} callback err, response
   # @return {Subsonic} this
   createShare: (id, expires, cb) ->
