@@ -114,107 +114,123 @@
           <td>src&#47;subsonic.coffee</td>
         </tr>
       </table>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <p>Subsonic</p>
+</div>
+<div class='tags'>
+</div>
       <h2>Instance Method Summary</h2>
       <ul class='summary'>
   <li>
     <span class='signature'>
       <a href='#constructor-instance'>
-        - (void) <strong>constructor</strong>(config)
+        - (Subsonic) <strong>constructor</strong>(config)
       </a>
     </span>
     <span class='constructor note title'>Constructor</span>
     <span class='desc'>
-      
+      Subsonic
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#get-instance'>
-        - (void) <strong>get</strong>(path, query, cb)
+        - (Subsonic) <strong>get</strong>(path, query, cb)
       </a>
     </span>
     <span class='desc'>
-      
+      get
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#ping-instance'>
-        - (void) <strong>ping</strong>(cb)
+        - (Subsonic) <strong>ping</strong>(cb)
       </a>
     </span>
     <span class='desc'>
-      
+      <a href="http://your-server/rest/ping.view">http://your-server/rest/ping.view</a>
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#topLevelFolders-instance'>
-        - (void) <strong>topLevelFolders</strong>(cb)
+        - (Subsonic) <strong>topLevelFolders</strong>(cb)
       </a>
     </span>
     <span class='desc'>
-      
+      <a href="http://your-server/rest/getMusicFolders.view">http://your-server/rest/getMusicFolders.view</a>
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#indexes-instance'>
-        - (void) <strong>indexes</strong>(cb)
+        - (Subsonic) <strong>indexes</strong>(cb)
       </a>
     </span>
     <span class='desc'>
-      
+      <a href="http://your-server/rest/getIndexes.view">http://your-server/rest/getIndexes.view</a>
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#folder-instance'>
-        - (void) <strong>folder</strong>(id, cb)
+        - (Subsonic) <strong>folder</strong>(id, cb)
       </a>
     </span>
     <span class='desc'>
-      
+      <a href="http://your-server/rest/getMusicDirectory.view">http://your-server/rest/getMusicDirectory.view</a>
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#artists-instance'>
-        - (void) <strong>artists</strong>(cb)
+        - (Subsonic) <strong>artists</strong>(cb)
       </a>
     </span>
     <span class='desc'>
-      
+      <a href="http://your-server/rest/getArtists.view">http://your-server/rest/getArtists.view</a>
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#artist-instance'>
-        - (void) <strong>artist</strong>(id, cb)
+        - (Subsonic) <strong>artist</strong>(id, cb)
       </a>
     </span>
     <span class='desc'>
-      
+      <a href="http://your-server/rest/getArtist.view">http://your-server/rest/getArtist.view</a>
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#album-instance'>
-        - (void) <strong>album</strong>(id, cb)
+        - (Subsonic) <strong>album</strong>(id, cb)
       </a>
     </span>
     <span class='desc'>
-      
+      <a href="http://your-server/rest/getAlbum.view">http://your-server/rest/getAlbum.view</a>
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#song-instance'>
-        - (void) <strong>song</strong>(id, cb)
+        - (Subsonic) <strong>song</strong>(id, cb)
       </a>
     </span>
     <span class='desc'>
-      
+      <a href="http://your-server/rest/getSong.view">http://your-server/rest/getSong.view</a>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#createShare-instance'>
+        - (Subsonic) <strong>createShare</strong>(id, expires, cb)
+      </a>
+    </span>
+    <span class='desc'>
+      <a href="http://your-server/rest/createShare.view">http://your-server/rest/createShare.view</a>
     </span>
   </li>
 </ul>
@@ -222,9 +238,32 @@
       <div class='methods'>
   <div class='method_details'>
     <p class='signature' id='constructor-instance'>
-      - (void) <strong>constructor</strong>(config)
+      - (Subsonic) <strong>constructor</strong>(config)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Subsonic</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>@config</span>
+      <span class='type'>
+        (<tt>object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>username, password, server, are all required</span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
 </div>
   </div>
 </div>
@@ -232,72 +271,331 @@
       <div class='methods'>
   <div class='method_details'>
     <p class='signature' id='get-instance'>
-      - (void) <strong>get</strong>(path, query, cb)
+      - (Subsonic) <strong>get</strong>(path, query, cb)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>get</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>path</span>
+      <span class='type'>
+        (<tt>string</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>query</span>
+      <span class='type'>
+        (<tt>object</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (<tt>Function</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='ping-instance'>
-      - (void) <strong>ping</strong>(cb)
+      - (Subsonic) <strong>ping</strong>(cb)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p><a href="http://your-server/rest/ping.view">http://your-server/rest/ping.view</a></p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (<tt>Function</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='topLevelFolders-instance'>
-      - (void) <strong>topLevelFolders</strong>(cb)
+      - (Subsonic) <strong>topLevelFolders</strong>(cb)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p><a href="http://your-server/rest/getMusicFolders.view">http://your-server/rest/getMusicFolders.view</a></p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (<tt>Function</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='indexes-instance'>
-      - (void) <strong>indexes</strong>(cb)
+      - (Subsonic) <strong>indexes</strong>(cb)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p><a href="http://your-server/rest/getIndexes.view">http://your-server/rest/getIndexes.view</a></p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (<tt>Function</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='folder-instance'>
-      - (void) <strong>folder</strong>(id, cb)
+      - (Subsonic) <strong>folder</strong>(id, cb)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p><a href="http://your-server/rest/getMusicDirectory.view">http://your-server/rest/getMusicDirectory.view</a></p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (<tt>number</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (<tt>Function</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='artists-instance'>
-      - (void) <strong>artists</strong>(cb)
+      - (Subsonic) <strong>artists</strong>(cb)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p><a href="http://your-server/rest/getArtists.view">http://your-server/rest/getArtists.view</a></p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (<tt>Function</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='artist-instance'>
-      - (void) <strong>artist</strong>(id, cb)
+      - (Subsonic) <strong>artist</strong>(id, cb)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p><a href="http://your-server/rest/getArtist.view">http://your-server/rest/getArtist.view</a></p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (<tt>number</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (<tt>Function</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='album-instance'>
-      - (void) <strong>album</strong>(id, cb)
+      - (Subsonic) <strong>album</strong>(id, cb)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p><a href="http://your-server/rest/getAlbum.view">http://your-server/rest/getAlbum.view</a></p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (<tt>number</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (<tt>Function</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='song-instance'>
-      - (void) <strong>song</strong>(id, cb)
+      - (Subsonic) <strong>song</strong>(id, cb)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p><a href="http://your-server/rest/getSong.view">http://your-server/rest/getSong.view</a></p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (<tt>number</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (<tt>Function</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='createShare-instance'>
+      - (Subsonic) <strong>createShare</strong>(id, expires, cb)
+    </p>
+    <div class='docstring'>
+  <p><a href="http://your-server/rest/createShare.view">http://your-server/rest/createShare.view</a></p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (<tt>number</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (<tt>Function</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt><a href='../classes/Subsonic.html'>Subsonic</a></tt>)
+      &mdash;
+      <span class='desc'>this</span>
+    </li>
+  </ul>
 </div>
   </div>
 </div>
     </div>
     <div id='footer'>
   Generated on
-  Sun Mar 17 2013 22:07:17 GMT-0400 (EDT)
+  Sun Mar 17 2013 22:10:23 GMT-0400 (EDT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
   v1.5.6
