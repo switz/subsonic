@@ -30,10 +30,33 @@
       <section>
         <h3>Subsonic Node.js API</h3>
 
-<p><a href="/subsonic/doc/classes/Subsonic.html">Docs</a></p>
+<p>npm module for the subsonic api</p>
+
+<h3>Install</h3>
 
 <pre><code>$ npm install subsonic --save
 </code></pre>
+
+<h3>Documentation</h3>
+
+<p><a href="http://saewitz.com/subsonic/doc/classes/Subsonic.html">Documentation</a></p>
+
+<h3>Example</h3>
+
+<div class="highlight"><pre><span class="nx">Subsonic</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'subsonic'</span><span class="p">);</span>
+<span class="nx">subsonic</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Subsonic</span><span class="p">({</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">''</span><span class="p">,</span>
+  <span class="nx">password</span><span class="o">:</span> <span class="s1">''</span><span class="p">,</span>
+  <span class="nx">server</span><span class="o">:</span> <span class="s1">''</span><span class="p">,</span>
+  <span class="nx">application</span><span class="o">:</span> <span class="s1">'subsonic node.js api'</span><span class="p">,</span> <span class="c1">// optional</span>
+  <span class="nx">format</span><span class="o">:</span> <span class="s1">'json'</span><span class="p">,</span> <span class="c1">// optional</span>
+  <span class="nx">version</span><span class="o">:</span> <span class="mf">1.7</span> <span class="c1">// optional</span>
+<span class="p">});</span>
+
+<span class="nx">subsonic</span><span class="p">.</span><span class="nx">ping</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/switz">switz</a></p>
