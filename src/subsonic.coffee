@@ -4,7 +4,7 @@ request = require 'superagent'
 class Subsonic
   # Subsonic
   #
-  # @param  {object} @config username, password, server, are all required
+  # @param  {object} config username, password, server are all required (application, format, and version optional)
   # @return {Subsonic} this
   constructor: (@config) ->
     { @username, @password, @server, @application, @format, @version } = @config
