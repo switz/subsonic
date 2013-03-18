@@ -18,7 +18,7 @@ class Subsonic
   #
   # @param  {string}   path
   # @param  {object}   query
-  # @param  {Function} cb
+  # @param  {Function} cb err, response
   # @return {Subsonic} this
   get: (path, query, cb) ->
     cb = arguments[arguments.length - 1]
@@ -33,7 +33,7 @@ class Subsonic
 
   # http://your-server/rest/ping.view
   #
-  # @param  {Function} cb
+  # @param  {Function} cb err, response
   # @return {Subsonic} this
   ping: (cb) ->
     @get 'ping', (response) ->
@@ -41,7 +41,7 @@ class Subsonic
 
   # http://your-server/rest/getMusicFolders.view
   #
-  # @param  {Function} cb
+  # @param  {Function} cb err, response
   # @return {Subsonic} this
   topLevelFolders: (cb) ->
     @get 'getMusicFolders', (res) ->
@@ -49,7 +49,7 @@ class Subsonic
 
   # http://your-server/rest/getIndexes.view
   #
-  # @param  {Function} cb
+  # @param  {Function} cb err, response
   # @return {Subsonic} this
   indexes: (cb) ->
     @get 'getIndexes', (res) ->
@@ -58,7 +58,7 @@ class Subsonic
   # http://your-server/rest/getMusicDirectory.view
   #
   # @param  {number} id
-  # @param  {Function} cb
+  # @param  {Function} cb err, response
   # @return {Subsonic} this
   folder: (id, cb) ->
     @get 'getMusicDirectory', { id }, (response) ->
@@ -66,7 +66,7 @@ class Subsonic
 
   # http://your-server/rest/getArtists.view
   #
-  # @param  {Function} cb
+  # @param  {Function} cb err, response
   # @return {Subsonic} this
   artists: (cb) ->
     @get 'getArtists', (res) ->
@@ -75,7 +75,7 @@ class Subsonic
   # http://your-server/rest/getArtist.view
   #
   # @param  {number} id
-  # @param  {Function} cb
+  # @param  {Function} cb err, response
   # @return {Subsonic} this
   artist: (id, cb) ->
     @get 'getArtist', { id }, (res) ->
@@ -84,7 +84,7 @@ class Subsonic
   # http://your-server/rest/getAlbum.view
   #
   # @param  {number} id
-  # @param  {Function} cb
+  # @param  {Function} cb err, response
   # @return {Subsonic} this
   album: (id, cb) ->
     @get 'getAlbum', { id }, (res) ->
@@ -93,7 +93,7 @@ class Subsonic
   # http://your-server/rest/getSong.view
   #
   # @param  {number} id
-  # @param  {Function} cb
+  # @param  {Function} cb err, response
   # @return {Subsonic} this
   song: (id, cb) ->
     @get 'getSong', { id }, (res) ->
@@ -102,7 +102,7 @@ class Subsonic
   # http://your-server/rest/createShare.view
   #
   # @param  {number} id
-  # @param  {Function} cb
+  # @param  {Function} cb err, response
   # @return {Subsonic} this
   createShare: (id, expires, cb) ->
     if typeof expires is 'function'
