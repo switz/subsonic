@@ -73,3 +73,9 @@ describe 'API', ->
         expect(song.title).to.be 'Down With Disease >'
         done()
 
+    it 'chain', (done) ->
+      subsonic.ping((err, res) ->
+        expect(res.status).to.be 'ok'
+      ).topLevelFolders (err, folders) ->
+        expect(folders.length).to.be 2
+        done()
