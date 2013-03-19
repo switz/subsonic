@@ -49,7 +49,9 @@ describe 'API', ->
     it 'folder', (done) ->
       subsonic.folder 54, (err, folder) ->
         expect(err).to.be null
-        expect(folder.length).to.be 46
+        expect(folder.children.length).to.be 46
+        expect(folder.id).to.be 54
+        expect(folder.name).to.be 2012
         done()
 
     it 'artists', (done) ->
