@@ -49,7 +49,9 @@ describe 'API', ->
     it 'folder', (done) ->
       subsonic.folder 54, (err, folder) ->
         expect(err).to.be null
-        expect(folder.length).to.be 46
+        expect(folder.children.length).to.be 46
+        expect(folder.id).to.be 54
+        expect(folder.name).to.be 2012
         done()
 
     it 'artists', (done) ->
@@ -79,6 +81,12 @@ describe 'API', ->
         expect(song.genre).to.be 'Jamband'
         expect(song.album).to.be '12-29-1997 MSG, NY'
         expect(song.title).to.be 'Down With Disease >'
+        done()
+
+    it 'cover art', (done) ->
+      subsonic.coverArt 33640, (err, art) ->
+        expect(err).to.be null
+        expect(art).to.be {}
         done()
 
     it 'chain', (done) ->

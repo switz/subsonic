@@ -62,7 +62,10 @@ class Subsonic
   # @return {Subsonic} this
   folder: (id, cb) ->
     @get 'getMusicDirectory', { id }, (response) ->
-      cb null, response.directory.child
+      cb null,
+        children: response.directory?.child
+        id: response.directory?.id
+        name: response.directory?.name
 
   # http://your-server/rest/getArtists.view
   #
@@ -111,6 +114,13 @@ class Subsonic
       # valid for 1 hour
       expires = (Date.now() / 1000) + 3600
     @get 'createShare', { id, expires }, (res) ->
+      return cb "No share found" unless res.shares
       cb null, res.shares.share
+
+  coverArt: (id, cb) ->
+    @get 'getCoverArt', { id }, (res) ->
+      cb null, res
+
+  v: -> '0.0.4'
 
 module.exports = Subsonic
