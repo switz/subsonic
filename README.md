@@ -17,8 +17,8 @@ $ npm install subsonic --save
 ### Example
 
 ```javascript
-Subsonic = require('subsonic');
-subsonic = new Subsonic({
+var Subsonic = require('subsonic');
+var subsonic = new Subsonic({
   username: '',
   password: '',
   server: '',
